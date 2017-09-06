@@ -12,12 +12,11 @@ node {
 }
 
 stage 'QA'
-{
+node {
     //runTests(servers, 30)
     echo 'run test here'
 }
 
-//stage name: 'Staging', concurrency: 1
 node {
     echo "deploy here"
   //  servers.deploy 'staging'
