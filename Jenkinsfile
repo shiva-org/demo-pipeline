@@ -31,7 +31,7 @@ node {
 }
 
 def mvn(args) {
-    sh "${tool 'maven-3'}/bin/mvn ${args}"
+    sh "${tool 'maven_3_5_0'}/bin/mvn ${args}"
 }
 
 def runTests(servers, duration) {
