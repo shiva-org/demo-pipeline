@@ -12,18 +12,15 @@ node {
 }
 
 stage 'QA'
-parallel(longerTests: {
+{
     //runTests(servers, 30)
     echo 'run test here'
-}, quickerTests: {
-    //runTests(servers, 20)
-    echo 'run test here'
-})
+}
 
 stage name: 'Staging', concurrency: 1
 node {
     echo "deploy here"
-    servers.deploy 'staging'
+  //  servers.deploy 'staging'
 }
 
 input message: "Does ${jettyUrl}staging/ look good?"
