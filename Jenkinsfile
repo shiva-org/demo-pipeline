@@ -22,7 +22,9 @@ node {
   //  servers.deploy 'staging'
 }
 
-input message: "Does ${jettyUrl}staging/ look good?"
+//input message: "Does ${jettyUrl}staging/ look good?"
+input message: 'Does ${jettyUrl}staging/ look good?', ok: 'approval', parameters: [booleanParam(defaultValue: true, description: '', name: 'deployed')], submitter: 'admin'
+
 
 //stage name: 'Production', concurrency: 1
 node {
