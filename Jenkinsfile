@@ -6,15 +6,18 @@ stage 'Dev'
 node {
     checkout scm
     servers = load 'servers.groovy'
-    mvn '-o clean package'
-    dir('target') {stash name: 'war', includes: 'x.war'}
+    //mvn '-o clean package'
+    echo 'mvn build here'
+    //dir('target') {stash name: 'war', includes: 'x.war'}
 }
 
 stage 'QA'
 parallel(longerTests: {
     runTests(servers, 30)
+    echo 'run test here'
 }, quickerTests: {
     runTests(servers, 20)
+    echo 'run test here'
 })
 
 stage name: 'Staging', concurrency: 1
