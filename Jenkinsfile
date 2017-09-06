@@ -7,7 +7,7 @@ node {
     checkout scm
     servers = load 'servers.groovy'
     //mvn '-o clean package'
-    echo 'This is from feature one branch'
+    echo 'This is from feature 2 branch'
     echo 'mvn build here'
     //dir('target') {stash name: 'war', includes: 'x.war'}
 }
