@@ -17,7 +17,7 @@ stage 'QA'
     echo 'run test here'
 }
 
-stage name: 'Staging', concurrency: 1
+//stage name: 'Staging', concurrency: 1
 node {
     echo "deploy here"
   //  servers.deploy 'staging'
@@ -25,7 +25,7 @@ node {
 
 input message: "Does ${jettyUrl}staging/ look good?"
 
-stage name: 'Production', concurrency: 1
+//stage name: 'Production', concurrency: 1
 node {
     //servers.deploy 'production'
     echo "Deployed to ${jettyUrl}production/"
